@@ -1,0 +1,2 @@
+class CoffeeVideosController < ApplicationController
+end

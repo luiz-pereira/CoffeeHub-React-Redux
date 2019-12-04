@@ -1,0 +1,2 @@
+class CoffeeVideo < ApplicationRecord
+end

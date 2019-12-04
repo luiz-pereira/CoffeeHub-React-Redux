@@ -1,0 +1,2 @@
+class CoffeeImage < ApplicationRecord
+end
