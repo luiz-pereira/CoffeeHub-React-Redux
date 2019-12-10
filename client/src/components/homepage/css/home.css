@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Yantramanav:100");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400");
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%; }
+
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background: url(../images/tyler-nix-7r12qgK11PI-unsplash.jpg) no-repeat 50% 50%;
+  display: table;
+  top: 0;
+  background-size: cover;
+  background-attachment: fixed; }
+
+/* tina-guina-obV_LM0KjxY-unsplash.jpg */
+/*  tyler-nix-7r12qgK11PI-unsplash.jpg*/
+.intro .inner {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  max-width: none; }
+
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 35%; }
+
+#title {
+  font-family: 'Yantramanav', sans-serif;
+  font-size: 600%;
+  font-weight: 100;
+  color: #3a6168;
+  line-height: 36%; }
+
+#btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100%;
+  font-weight: 400;
+  color: #d9b382;
+  text-decoration: none;
+  border: solid #d9b382 2px;
+  padding: 10px 20px;
+  border-radius: 9px;
+  transition: all 0.5s; }
+
+#btn:hover {
+  color: #3a6168;
+  border: solid #3a6168; }
+
+p {
+  font-size: 150%;
+  line-height: 120%;
+  font-family: sans-serif;
+  color: antiquewhite; }
+
+.coffes {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background: url(../images/tina-guina-obV_LM0KjxY-unsplash.jpg) no-repeat 50% 50%;
+  display: table;
+  top: 0;
+  background-size: cover;
+  background-attachment: fixed; }
+
+/*--- Media Queries --*/
+@media screen and (max-width: 900px) {
+  .content {
+    padding-bottom: 30%; }
+
+  #title {
+    font-size: 450%; }
+
+  #btn {
+    font-size: 110%;
+    padding: 9px 17px; } }
+@media screen and (max-width: 768px) {
+  .content {
+    padding-bottom: 40%; }
+
+  #title {
+    font-size: 300%; }
+
+  #btn {
+    font-size: 110%;
+    padding: 9px 17px; } }
+@media screen and (max-width: 480px) {
+  .content {
+    padding-bottom: 50%; }
+
+  #title {
+    font-size: 200%; }
+
+  #btn {
+    font-size: 110%;
+    padding: 6px 14px; }
+
+  p {
+    font-size: 100%;
+    line-height: 100%; } }
+
