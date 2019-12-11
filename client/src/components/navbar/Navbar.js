@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
 import { useSpring, animated, config } from "react-spring";
-
 import Brand from "./Brand";
 import BurgerMenu from "./BurgerMenu";
 import CollapseMenu from "./CollapseMenu";
@@ -21,11 +20,12 @@ const Navbar = (props) => {
 
   return (
     <>
-      <NavBar style={barAnimation}>
+      <NavBar id="navbar" style={barAnimation}>
         <FlexContainer>
           <Brand />
           <NavLinks style={linkAnimation}>
-            <a href="/">Sign up</a>
+            <a href="/coffees">See coffees</a>
+						<a href="/signup">Sign Up</a>
             <a href="/">Sign In</a>
             <a href="/">Log Out</a>
           </NavLinks>
@@ -48,13 +48,13 @@ const Navbar = (props) => {
 export default Navbar
 
 const NavBar = styled(animated.nav)`
-  position: fixed;
+  
   width: 100%;
   top: 0;
   left: 0;
   background: #2d3436;
   z-index: 1;
-  font-size: 1.4rem;
+  font-size: 1rem;
 `;
 
 const FlexContainer = styled.div`
@@ -63,7 +63,7 @@ const FlexContainer = styled.div`
   margin: auto;
   padding: 0 2rem;;
   justify-content: space-between;
-  height: 5rem;
+  height: 3rem;
 `;
 
 const NavLinks = styled(animated.ul)`

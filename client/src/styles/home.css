@@ -6,11 +6,11 @@ html, body {
   height: 100%;
   width: 100%; }
 
-.intro {
+#intro {
   height: 100%;
   width: 100%;
   margin: auto;
-  background: url(../images/tyler-nix-7r12qgK11PI-unsplash.jpg) no-repeat 50% 50%;
+  background: url(../components/homepage/images/tyler-nix-7r12qgK11PI-unsplash.jpg) no-repeat 50% 50%;
   display: table;
   top: 0;
   background-size: cover;
@@ -18,13 +18,13 @@ html, body {
 
 /* tina-guina-obV_LM0KjxY-unsplash.jpg */
 /*  tyler-nix-7r12qgK11PI-unsplash.jpg*/
-.intro .inner {
+#inner {
   display: table-cell;
   vertical-align: middle;
   width: 100%;
   max-width: none; }
 
-.content {
+#content {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
@@ -52,25 +52,9 @@ html, body {
   color: #3a6168;
   border: solid #3a6168; }
 
-p {
-  font-size: 150%;
-  line-height: 120%;
-  font-family: sans-serif;
-  color: antiquewhite; }
-
-.coffes {
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  background: url(../images/tina-guina-obV_LM0KjxY-unsplash.jpg) no-repeat 50% 50%;
-  display: table;
-  top: 0;
-  background-size: cover;
-  background-attachment: fixed; }
-
 /*--- Media Queries --*/
 @media screen and (max-width: 900px) {
-  .content {
+  #content {
     padding-bottom: 30%; }
 
   #title {
@@ -80,7 +64,7 @@ p {
     font-size: 110%;
     padding: 9px 17px; } }
 @media screen and (max-width: 768px) {
-  .content {
+  #content {
     padding-bottom: 40%; }
 
   #title {
@@ -90,7 +74,7 @@ p {
     font-size: 110%;
     padding: 9px 17px; } }
 @media screen and (max-width: 480px) {
-  .content {
+  #content {
     padding-bottom: 50%; }
 
   #title {
@@ -99,8 +83,6 @@ p {
   #btn {
     font-size: 110%;
     padding: 6px 14px; }
-
-  p {
-    font-size: 100%;
-    line-height: 100%; } }
+	}
+  
 
