@@ -10,7 +10,7 @@ export default class Home extends Component {
 				<div id='inner'>
 					<div id='content'>
 						<section id='title' className="animated bounceInUp" >
-							CoffeeHub
+							<h1>CoffeeHub</h1>
 						</section>
 						<section id='see-coffees' className="animated bounceInUp" >
 							<a id='btn' href="/coffees">See Coffees</a>

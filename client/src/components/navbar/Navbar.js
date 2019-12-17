@@ -18,17 +18,37 @@ const Navbar = (props) => {
     config: config.wobbly,
   });
 
+	const availableLinks = () => {
+		if (props.logged){
+			return (
+				<>
+					<H1>Hello, {props.currentUser.userName}</H1>
+					<NavLinks style={linkAnimation}>
+						<a href="/coffees">See coffees</a>
+						<a href="/coffees">Saved coffees</a>
+						<button id="button-navbar-logout" onClick={() => props.handleLogout()}>Log Out</button>
+					</NavLinks>
+				</>
+			)
+		} else {
+			return (<NavLinks style={linkAnimation}>
+				<a href="/coffees">See coffees</a>
+				<a href="/signup">Sign Up</a>
+				<a href="/signin">Sign In</a>
+			</NavLinks>)
+		}
+	}
+
+	
+	
+
+
   return (
     <>
       <NavBar id="navbar" style={barAnimation}>
         <FlexContainer>
           <Brand />
-          <NavLinks style={linkAnimation}>
-            <a href="/coffees">See coffees</a>
-						<a href="/signup">Sign Up</a>
-            <a href="/">Sign In</a>
-            <a href="/">Log Out</a>
-          </NavLinks>
+          {availableLinks()}
           <BurgerWrapper>
             <BurgerMenu
               navbarState={props.navbarState} 
@@ -90,6 +110,16 @@ const NavLinks = styled(animated.ul)`
       display: none;
     }
   }
+`;
+
+const H1 = styled(animated.ul)`
+  text-center;
+  list-style-type: none;
+  color: #dfe6e9;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 300ms linear 0s;
+	font-size: 2em;
 `;
 
 const BurgerWrapper = styled.div`

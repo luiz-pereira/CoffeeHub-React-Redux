@@ -45,3 +45,9 @@ gem "rspec-rails", "~> 3.9"
 gem "bcrypt", "~> 3.1"
 
 gem "foreman", "~> 0.86.0"
+
+gem "pry", "~> 0.12.2"
+
+gem "jwt", "~> 2.2"
+
+gem "active_model_serializers", "~> 0.10.10"

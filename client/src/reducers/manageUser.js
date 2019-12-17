@@ -1,17 +1,16 @@
-function userReducer (state = {userName: '', userEmail:'', userId: '', userType: '', userCompany: ''}, action){
+function userReducer (state = {currentUser: {userName: '', userEmail:'', userId: '', userType: '', userCompany: ''}, logged: false}, action){
 	switch (action.type) {
-		case 'ADD_USER':
-			break
-			// fetch all coffees
-		case 'DELETE_USER':
-			break
-			// fetch all coffees saved by the user
-		case 'LOGIN':
-			break
-
-		case 'LOGOUT':
-			break
-
+		case 'LOGIN_USER':
+			return {...state, currentUser: {
+				userName: action.payload.name,
+				userEmail: action.payload.email,
+				userId: action.payload.id,
+				userType: action.payload.category,
+				userCompany: action.payload.company
+			}, logged: true}
+		case 'LOGOUT_USER':
+			localStorage.removeItem("token")
+			return {...state, currentUser: {userName: '', userEmail:'', userId: '', userType: '', userCompany: ''}, logged: false}
 		default:
 			return state
 	}
