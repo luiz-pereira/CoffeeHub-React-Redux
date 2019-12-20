@@ -1,9 +1,17 @@
 import React from 'react'
-import '../../styles/coffees.css'
+import { withRouter } from 'react-router-dom';
 
-const Coffee = ({coffee}) => {
+
+const Coffee = props => {
+	 
+	const coffee = props.coffee
+
+	const handleClick = () =>{
+		props.history.push(`/coffees/${coffee.id}`)
+	}
+
 	return (
-		<div className="card">
+		<div onClick={handleClick} className="card">
 			<div className="card_image"> 
 				<img src={require(`../../assets/coffeeImages/small/${coffee.imagefile_id}.jpg`)} alt="some coffee!"/> 
 			</div>
@@ -17,4 +25,4 @@ const Coffee = ({coffee}) => {
 
 
 
-export default Coffee
+export default withRouter(Coffee)

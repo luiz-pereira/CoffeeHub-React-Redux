@@ -14,6 +14,9 @@ import "./styles/animate.css"
 import "./styles/home.css"
 import "./styles/navbarStyle.css"
 import "./styles/signup.css"
+import './styles/custom.scss'
+import './styles/coffeeShow.css'
+import './styles/coffees.css'
 
 
 

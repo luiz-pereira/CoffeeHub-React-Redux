@@ -1,3 +1,14 @@
+#body-coffee{
+	background-image: url(../assets/bg1.jpg);
+	
+  display: table;
+	top: 0;
+	background-size:100%;
+  background-size: cover;
+	background-attachment: fixed; 
+	
+}
+
 .cards-list {
   z-index: 0;
   width: 100%;
@@ -11,9 +22,10 @@
   width: 300px;
   height: 300px;
   border-radius: 40px;
-box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+	box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
   cursor: pointer;
-  transition: 0.4s;
+	transition: 0.4s;
+	text-decoration: none;
 }
 
 .card .card_image {
@@ -32,7 +44,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 .card .card_title {
   text-align: center;
   border-radius: 0px 0px 40px 40px;
-  font-family: sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-weight: bold;
   font-size: 30px;
   margin-top: -80px;
@@ -59,20 +71,3 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     flex-direction: column;
   }
 }
-
-
-/*
-.card {
-  margin: 30px auto;
-  width: 300px;
-  height: 300px;
-  border-radius: 40px;
-  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-repeat: no-repeat;
-box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
-  transition: 0.4s;
-}
-*/

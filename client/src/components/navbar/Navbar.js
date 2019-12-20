@@ -22,11 +22,11 @@ const Navbar = (props) => {
 		if (props.logged){
 			return (
 				<>
-					<H1>Hello, {props.currentUser.userName}</H1>
+					
 					<NavLinks style={linkAnimation}>
 						<a href="/coffees">See coffees</a>
 						<a href="/coffees">Saved coffees</a>
-						<button id="button-navbar-logout" onClick={() => props.handleLogout()}>Log Out</button>
+						<a id="button-navbar-logout" onClick={() => props.handleLogout()}><small>Log Out</small></a>
 					</NavLinks>
 				</>
 			)
@@ -72,7 +72,7 @@ const NavBar = styled(animated.nav)`
   width: 100%;
   top: 0;
   left: 0;
-  background: #2d3436;
+  background: transparent;
   z-index: 1;
   font-size: 1rem;
 `;
@@ -92,9 +92,11 @@ const NavLinks = styled(animated.ul)`
   margin: auto 0;
 
   & a {
-    color: #dfe6e9;
-    text-transform: uppercase;
-    font-weight: 600;
+    color: white;
+		text-transform: uppercase;
+		font-family: 'Quicksand', sans-serif
+		font-weight: 1000;
+		font-size: 2em;
     border-bottom: 1px solid transparent;
     margin: 0 1.5rem;
     transition: all 300ms linear 0s;
@@ -103,7 +105,8 @@ const NavLinks = styled(animated.ul)`
 
     &:hover {
       color: #fdcb6e;
-      border-bottom: 1px solid #fdcb6e;
+			border-bottom: 1px solid #fdcb6e;
+			text-decoration: none;
     }
 
     @media (max-width: 768px) {
@@ -113,11 +116,12 @@ const NavLinks = styled(animated.ul)`
 `;
 
 const H1 = styled(animated.ul)`
-  text-center;
+  
   list-style-type: none;
-  color: #dfe6e9;
+	color: white;
+	font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 800;
   transition: all 300ms linear 0s;
 	font-size: 2em;
 `;

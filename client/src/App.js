@@ -30,11 +30,9 @@ class App extends Component {
 				<div>
 					<Route path='/' component={NavBarContainer} />
 					<Route exact path='/' component={Home}/>
-					<Route exact path='/coffees' component={CoffeeContainer}/>
+					<Route path='/coffees' render={routerProps => <CoffeeContainer {...routerProps} />}/>
 					<Route exact path='/signup' component={SignUp}/>
 					<Route exact path='/signin' component={SignIn}/>
-					{/* Criar Component de logout - verificar learn.co delete lab */}
-					
 				</div>
 			</Router>
     )

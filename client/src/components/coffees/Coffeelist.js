@@ -5,10 +5,14 @@ import LoadinGif from '../loading'
 
 
 class CoffeeList extends Component{
+
+	componentDidMount(){
+		document.body.id = 'body-coffee'
+	}
+
 	render(){
 		return (
 			<div>
-				{this.props.loading ? <LoadinGif /> : null}
 				<div className='cards-list'>
 					{this.props.coffees.map(coffee =>  <Coffee coffee={coffee}/>)}
 				</div>

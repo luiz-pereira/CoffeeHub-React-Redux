@@ -8,15 +8,20 @@ html, body {
 	font-family: 'Montserrat', sans-serif;
 }
 
-#intro {
-  height: 100%;
-  width: 100%;
-  margin: auto;
-  background: url(../assets/coffeeImages/13.jpg) no-repeat 50% 50%;
+body{
+	background: url(../assets/coffeeImages/16.jpg) no-repeat 50% 50%;
   display: table;
-  top: 0;
+	top: 0;
+	background-size:100%;
   background-size: cover;
-  background-attachment: fixed; }
+  background-attachment: fixed; 
+}
+
+#intro {
+  margin: auto;
+  display: table;
+	top: 0;
+	}
 
 /* tina-guina-obV_LM0KjxY-unsplash.jpg */
 /*  tyler-nix-7r12qgK11PI-unsplash.jpg*/
@@ -34,37 +39,44 @@ html, body {
 
 #title {
   font-family: 'Yantramanav', sans-serif;
-  font-size: 600%;
-  font-weight: 100;
-  color: #3a6168;
+  font-size: 800%;
+	font-weight: 100;
+	margin: auto;
+	color: #64b5c4;
+	position: fixed;
+	top: 15%;
   line-height: 36%; }
 
-#btn {
+#see-coffees {
   font-family: 'Montserrat', sans-serif;
   font-size: 100%;
   font-weight: 400;
-  color: #d9b382;
-  text-decoration: none;
+	color: #d9b382;
+	margin: auto;
+	text-decoration: none;
+	position: fixed;
   border: solid #d9b382 2px;
   padding: 10px 20px;
-  border-radius: 9px;
+	border-radius: 9px;
+	top: 26%;
   transition: all 0.5s; }
 
-#btn:hover {
+#see-coffees:hover {
   color: #3a6168;
   border: solid #3a6168; }
 
 /*--- Media Queries --*/
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
   #content {
     padding-bottom: 30%; }
 
   #title {
     font-size: 450%; }
 
-  #btn {
+  #see-coffees {
     font-size: 110%;
-    padding: 9px 17px; } }
+		padding: 9px 17px; } }
+		
 @media screen and (max-width: 768px) {
   #content {
     padding-bottom: 40%; }
@@ -72,7 +84,7 @@ html, body {
   #title {
     font-size: 300%; }
 
-  #btn {
+  #see-coffees {
     font-size: 110%;
     padding: 9px 17px; } }
 @media screen and (max-width: 480px) {
@@ -82,9 +94,9 @@ html, body {
   #title {
     font-size: 200%; }
 
-  #btn {
+  #see-coffees {
     font-size: 110%;
     padding: 6px 14px; }
 	}
   
-
+ */
