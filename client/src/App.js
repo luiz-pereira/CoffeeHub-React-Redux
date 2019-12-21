@@ -11,18 +11,11 @@ import CoffeeContainer from './components/coffees/CoffeeContainer';
 import NavBarContainer from './components/navbar/NavBarContainer';
 
 class App extends Component {
-  state = {
-    navbarOpen: false
-  }
 
 	componentDidMount = async () => {
 		await this.props.getCurrentUser()
   }
 	
-  handleNavbar = () => {
-    this.setState({ navbarOpen: !this.state.navbarOpen });
-  }
-
   render() {
 
     return (

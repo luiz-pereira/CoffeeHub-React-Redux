@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
 
 import { fetchAllCoffees } from '../../actions/coffeeActions'
+import { postCoffeeToUser, postRemoveCoffeeFromUser } from '../../actions/userActions'
 
 import CoffeeList from './Coffeelist'
 import CoffeeShow from './CoffeeShow'
@@ -14,13 +15,24 @@ class CoffeeContainer extends Component {
 	componentDidMount() {
 		this.props.fetchAllCoffees()
 	}
+
+	handleSaveCoffee = (user, coffee) =>{
+		this.props.postCoffeeToUser(user, coffee)
+	}
+
+	handleUnsaveCoffee = (user, coffee) =>{
+		this.props.postRemoveCoffeeFromUser(user, coffee)
+	}
 	
 	render (){
+		
 		return (
 			<>
 				<Switch>
+					{/* saved_coffees not working */}
+					<Route exact path='/saved_coffees' render={() => <CoffeeList loading = {this.props.loading} coffees={this.props.coffees}/>}/>
 					<Route exact path='/coffees' render={() => <CoffeeList loading = {this.props.loading} coffees={this.props.coffees}/>}/>
-					<Route path={`${this.props.match.url}/:coffeeId`} render={routerProps => <CoffeeShow {...routerProps} coffees={this.props.coffees}/>} />
+					<Route path={`${this.props.match.url}/:coffeeId`} render={routerProps => <CoffeeShow {...routerProps} currentUser={this.props.currentUser} logged={this.props.logged} coffees={this.props.coffees} handleSaveCoffee={this.handleSaveCoffee} handleUnsaveCoffee={this.handleUnsaveCoffee}/>} />
 				</Switch>
 			</>
 		)
@@ -28,7 +40,6 @@ class CoffeeContainer extends Component {
 }
 
 const mapStateToProps = state => {
-	
 	return {
 		currentUser: state.user.currentUser,
 		logged: state.user.logged,
@@ -39,7 +50,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		fetchAllCoffees: () => dispatch(fetchAllCoffees())
+		fetchAllCoffees: () => dispatch(fetchAllCoffees()),
+		postCoffeeToUser: (user, coffee) => dispatch(postCoffeeToUser(user, coffee)),
+		postRemoveCoffeeFromUser: (user, coffee) => dispatch(postRemoveCoffeeFromUser(user, coffee))
 	}
 }
 

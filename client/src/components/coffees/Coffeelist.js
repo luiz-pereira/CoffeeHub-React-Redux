@@ -1,25 +1,18 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React from 'react'
 import Coffee from './Coffee'
 import LoadinGif from '../loading'
 
 
-class CoffeeList extends Component{
-
-	componentDidMount(){
-		document.body.id = 'body-coffee'
-	}
-
-	render(){
-		return (
-			<div>
-				<div className='cards-list'>
-					{this.props.coffees.map(coffee =>  <Coffee coffee={coffee}/>)}
-				</div>
+const CoffeeList = props => {
+	debugger
+	document.body.id = 'body-coffee'
+	return (
+		<div>
+			<div className='cards-list'>
+				{props.coffees.map(coffee =>  <Coffee coffee={coffee}/>)}
 			</div>
-		)
-	}
-
+		</div>
+	)
 }
 
 export default CoffeeList

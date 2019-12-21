@@ -76,6 +76,7 @@ export const userLoginFetch = user => {
         } else {
 					localStorage.setItem("token", data.token)
 					try{
+						
 						dispatch(loginUser(data.user))
 					} catch {
 
@@ -93,3 +94,58 @@ const loginUser = userObj => ({
     type: 'LOGIN_USER',
     payload: userObj
 })
+
+export const postCoffeeToUser = (user, coffee) => {
+	const body = {user: user, coffee: coffee}
+	
+	const token = localStorage.token;
+	if (token) {
+		return dispatch => {
+			return fetch("/api/buyers/save_coffee", {
+				method: "POST",
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': `Bearer ${token}`
+				},
+				body: JSON.stringify(body)
+			})
+			.then(response => response.json())
+			.then(data => {
+				
+				dispatch(updateSavedCoffees(data))
+			})
+		}
+	}
+}
+
+const updateSavedCoffees = (user) => {
+	
+	return {
+		type: "UPDATE_SAVED_COFFEES",
+		user: user
+	}
+}
+
+export const postRemoveCoffeeFromUser = (user, coffee) => {
+	
+	const body = {user: user, coffee: coffee}
+	const token = localStorage.token;
+	if (token) {
+		return dispatch => {
+			return fetch("/api/buyers/unsave_coffee", {
+				method: "POST",
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': `Bearer ${token}`
+				},
+				body: JSON.stringify(body)
+			})
+			.then(response => response.json())
+			.then(data => {
+				
+				dispatch(updateSavedCoffees(data))
+			})
+		}
+	}
+}
+
