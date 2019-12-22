@@ -1,4 +1,4 @@
-function userReducer (state = {currentUser: {userName: '', userEmail:'', userId: '', userType: '', userCompany: '', savedCoffees: []}, logged: false}, action){
+function userReducer (state = {currentUser: {userName: '', userEmail:'', userId: '', userType: '', userCompany: '', savedCoffees: [], tastings:[]}, logged: false}, action){
 	switch (action.type) {
 		case 'LOGIN_USER':
 			return {...state, currentUser: {
@@ -7,7 +7,8 @@ function userReducer (state = {currentUser: {userName: '', userEmail:'', userId:
 				userId: action.payload.id,
 				userType: action.payload.category,
 				userCompany: action.payload.company,
-				savedCoffees: action.payload.coffees.map(coffee => coffee.id)
+				savedCoffees: action.payload.coffees.map(coffee => coffee.id),
+				tastings: action.payload.tastings
 			}, logged: true}
 		case 'LOGOUT_USER':
 			localStorage.removeItem("token")

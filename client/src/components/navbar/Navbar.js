@@ -25,7 +25,9 @@ const Navbar = (props) => {
 					
 					<NavLinks style={linkAnimation}>
 						<a href="/coffees">See coffees</a>
-						<a href="/saved_coffees">Saved coffees</a>
+						<a href="/user/profile/saved_coffees">Saved coffees</a>
+						<a href="/user/profile/details">User Details</a>
+						<a href="/user/profile/tastings">Tastings</a>
 						<a id="button-navbar-logout" onClick={() => props.handleLogout()}><small>Log Out</small></a>
 					</NavLinks>
 				</>

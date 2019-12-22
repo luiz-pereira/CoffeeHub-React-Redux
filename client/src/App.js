@@ -3,17 +3,20 @@ import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { getProfileFetch } from './actions/userActions'
+import {fetchAllCoffees} from './actions/coffeeActions'
 
 import Home from './components/homepage/home'
 import SignUp from './components/userHandling/signup';
 import SignIn from './components/userHandling/signin';
 import CoffeeContainer from './components/coffees/CoffeeContainer';
 import NavBarContainer from './components/navbar/NavBarContainer';
+import userProfileContainer from './components/userHandling/userProfileContainer'
 
 class App extends Component {
 
 	componentDidMount = async () => {
 		await this.props.getCurrentUser()
+		await this.props.fetchAllCoffees()
   }
 	
   render() {
@@ -26,6 +29,7 @@ class App extends Component {
 					<Route path='/coffees' render={routerProps => <CoffeeContainer {...routerProps} />}/>
 					<Route exact path='/signup' component={SignUp}/>
 					<Route exact path='/signin' component={SignIn}/>
+					<Route path='/user/profile' component={userProfileContainer}/>
 				</div>
 			</Router>
     )
@@ -41,7 +45,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return ({
-		getCurrentUser: () => dispatch(getProfileFetch())
+		getCurrentUser: () => dispatch(getProfileFetch()),
+		fetchAllCoffees: () => dispatch(fetchAllCoffees())
 	})
 }
 

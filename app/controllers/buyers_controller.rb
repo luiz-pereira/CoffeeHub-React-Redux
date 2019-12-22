@@ -11,7 +11,7 @@ class BuyersController < ApplicationController
 		})
 		@buyer.category = @buyer.type
 		@token = JsonWebToken.encode(user_id: @buyer.id)
-		@buyer.save ? (render json: {user: @buyer.serializable_hash(include: [:coffees]), token: @token}, status: 201) : (render json: {error: "invalid parameters, please check", status: 500})
+		@buyer.save ? (render json: {user: @buyer.serializable_hash(include: [:coffees, :tastings]), token: @token}, status: 201) : (render json: {error: "invalid parameters, please check", status: 500})
 	end
 
 	def save_coffee
@@ -39,7 +39,7 @@ class BuyersController < ApplicationController
       token = JsonWebToken.encode(user_id: @buyer.id)
 			time = Time.now + 30.days.to_i
 			# render json: @buyer
-      render json: {user: @buyer.serializable_hash(include: [:coffees]), token: token, exp: time.strftime("%m-%d-%Y %H:%M")}, status: :ok
+      render json: {user: @buyer.serializable_hash(include: [:coffees, :tastings]), token: token, exp: time.strftime("%m-%d-%Y %H:%M")}, status: :ok
     else
       render json: { error: 'unauthorized' }, status: :unauthorized
     end

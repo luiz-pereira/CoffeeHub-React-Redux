@@ -5,7 +5,7 @@ import logo from "../../assets/logo-min.png";
 
 const Brand = () => {
   return (
-    <div></div>
+    <div><h5>Coffee Hub</h5></div>
   )
 }
 

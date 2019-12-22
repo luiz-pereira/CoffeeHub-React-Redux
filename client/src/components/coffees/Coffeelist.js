@@ -4,7 +4,6 @@ import LoadinGif from '../loading'
 
 
 const CoffeeList = props => {
-	debugger
 	document.body.id = 'body-coffee'
 	return (
 		<div>

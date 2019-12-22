@@ -12,10 +12,6 @@ import { withRouter } from "react-router-dom";
 
 class CoffeeContainer extends Component {
 
-	componentDidMount() {
-		this.props.fetchAllCoffees()
-	}
-
 	handleSaveCoffee = (user, coffee) =>{
 		this.props.postCoffeeToUser(user, coffee)
 	}
@@ -29,8 +25,6 @@ class CoffeeContainer extends Component {
 		return (
 			<>
 				<Switch>
-					{/* saved_coffees not working */}
-					<Route exact path='/saved_coffees' render={() => <CoffeeList loading = {this.props.loading} coffees={this.props.coffees}/>}/>
 					<Route exact path='/coffees' render={() => <CoffeeList loading = {this.props.loading} coffees={this.props.coffees}/>}/>
 					<Route path={`${this.props.match.url}/:coffeeId`} render={routerProps => <CoffeeShow {...routerProps} currentUser={this.props.currentUser} logged={this.props.logged} coffees={this.props.coffees} handleSaveCoffee={this.handleSaveCoffee} handleUnsaveCoffee={this.handleUnsaveCoffee}/>} />
 				</Switch>
