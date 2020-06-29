@@ -1,26 +1,48 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
+import { render } from 'react-dom';
 
 
-const Coffee = props => {
-	 
-	const coffee = props.coffee
+class Coffee extends Component {
 
-	const handleClick = () =>{
-		props.history.push(`/coffees/${coffee.id}`)
+	state = {
+		like: false
+	}
+ 
+	handleClick = () =>{
+		this.props.history.push(`/coffees/${this.props.coffee.id}`)
 	}
 
-	return (
-		<div onClick={handleClick} className="card">
-			<div className="card_image"> 
-				<img src={require(`../../assets/coffeeImages/small/${coffee.imagefile_id}.jpg`)} alt="some coffee!"/> 
-			</div>
-			<div className="card_title title-white">
-				<p>{coffee.name}</p>
-			</div>
-		</div>	
-	)
+	// handleLike = () =>{
+	// 	this.setState({like: true})
+	// 	console.log("liked")
+	// }
+
+	// handleUnlike = () =>{
+	// 	this.setState({like: false})
+	// 	console.log("unliked")
+	// }
+	render(){
+
 	
+		return (
+			<>
+				<div onClick={this.handleClick} className="card">
+					<div className="card_image"> 
+						<img src={require(`../../assets/coffeeImages/small/${this.props.coffee.imagefile_id}.jpg`)} alt="some coffee!"/> 
+					</div>
+					<div className="card_title title-white">
+						<p>{this.props.coffee.name}</p>
+						{/* <p>Liked?{this.state.like ? "Yes!" : "No..."}</p> */}
+					</div>
+				</div>	
+					{/* <button onClick={this.handleLike} className='btn btn-primary'>Like</button>
+					<button onClick={this.handleUnlike} className='btn btn-warning'>Unlike</button> */}
+					
+			</>
+		)
+		
+	}
 }
 
 

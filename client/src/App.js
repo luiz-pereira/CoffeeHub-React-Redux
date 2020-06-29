@@ -14,9 +14,11 @@ import userProfileContainer from './components/userHandling/userProfileContainer
 
 class App extends Component {
 
-	componentDidMount = async () => {
-		await this.props.getCurrentUser()
-		await this.props.fetchAllCoffees()
+	componentDidMount = () => {
+	 this.props.getCurrentUser()
+	 console.log('a')
+	 this.props.fetchAllCoffees()
+	 console.log('b')
   }
 	
   render() {

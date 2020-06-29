@@ -8,10 +8,10 @@ const CoffeeList = props => {
 	return (
 		<div>
 			<div className='cards-list'>
-				{props.coffees.map(coffee =>  <Coffee coffee={coffee}/>)}
+				{props.coffees.map(coffee =>  <Coffee key={coffee.id} coffee={coffee}/>)}
 			</div>
 		</div>
 	)
 }
-
+	
 export default CoffeeList

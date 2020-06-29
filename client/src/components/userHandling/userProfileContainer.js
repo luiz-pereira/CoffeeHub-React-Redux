@@ -12,7 +12,7 @@ class userProfileContainer extends Component {
 	render(){
 		
 		const tastings = this.props.currentUser.tastings
-		debugger
+		
 		const currentUser = this.props.currentUser
 		const coffees = this.props.coffees.filter(coffee => currentUser.savedCoffees.includes(coffee.id))
 		

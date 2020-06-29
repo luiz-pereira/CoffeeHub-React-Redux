@@ -7,6 +7,14 @@ To iniate the app, run
 - npm install inside /client
 - run rake start (which uses Foreman to initiate both the web and the api servers)
 
+To use the app:
+- Sign up
+- click see coffees
+- choose any coffee and see the description
+- save and unsave any coffee
+- saved coffees will be shown in your "saved coffees"
+- the login information is persisted through a local cpoy of the webtoken
+
 the structure of the app is as follows.
 
 * Homepage with coffee pictures and a nice explanation
